@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Home Page</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
+    <style>
+        .cards {
+            width: 90%;
+            height: 310px;
+            margin: 20px auto;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                exportEnabled: true,
+                animationEnabled: true,
+                title: {
+                    text: "Desktop Browser Market Share in 2016"
+                },
+                data: [{
+                    type: "pie",
+                    startAngle: 25,
+                    toolTipContent: "<b>{label}</b>: {y}%",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 16,
+                    indexLabel: "{label} - {y}%",
+                    dataPoints: [{
+                            y: 51.08,
+                            label: "Chrome"
+                        },
+                        {
+                            y: 27.34,
+                            label: "Internet Explorer"
+                        },
+                        {
+                            y: 10.62,
+                            label: "Firefox"
+                        },
+                        {
+                            y: 5.02,
+                            label: "Microsoft Edge"
+                        },
+                        {
+                            y: 4.07,
+                            label: "Safari"
+                        },
+                        {
+                            y: 1.22,
+                            label: "Opera"
+                        },
+                        {
+                            y: 0.44,
+                            label: "Others"
+                        }
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Smile Again</h3>
+                <strong>SA</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#hello">Second Innings</a>
+                        </li>
+                        <li>
+                            <a href="#health">Health</a>
+                        </li>
+                        <li>
+                            <a href="#society">Society</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./about.html">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages.html" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Organisation
+                    </a>
+                    <!-- <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="./review.html">
+                        <i class="fas fa-image"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        FAQ
+                    </a>
+                </li> -->
+                <li>
+                    <a href="./contact.html">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul> -->
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" style="height : auto">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <!-- <span>Toggle Sidebar</span> -->
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+            </nav>
+            <div class="line"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../download.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                The Art of Living Foundation is a volunteer-based, humanitarian and educational
+                                non-governmental organization (NGO). It was founded in 1981 by Ravi Shankar. ... Art of
+                                Living offers several stress-elimination and self-development programs based on
+                                breathing techniques, meditation and yoga.
+                            </div>
+                        </div>
+                        
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                        <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../download.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                The Art of Living Foundation is a volunteer-based, humanitarian and educational
+                                non-governmental organization (NGO). It was founded in 1981 by Ravi Shankar. ... Art of
+                                Living offers several stress-elimination and self-development programs based on
+                                breathing techniques, meditation and yoga.
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                            <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+            <div class="line"></div>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../download.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                The Art of Living Foundation is a volunteer-based, humanitarian and educational
+                                non-governmental organization (NGO). It was founded in 1981 by Ravi Shankar. ... Art of
+                                Living offers several stress-elimination and self-development programs based on
+                                breathing techniques, meditation and yoga.
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                                <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../download.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                The Art of Living Foundation is a volunteer-based, humanitarian and educational
+                                non-governmental organization (NGO). It was founded in 1981 by Ravi Shankar. ... Art of
+                                Living offers several stress-elimination and self-development programs based on
+                                breathing techniques, meditation and yoga.
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                        <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+            <div id="hello" class="line"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../download.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                The Art of Living Foundation is a volunteer-based, humanitarian and educational
+                                non-governmental organization (NGO). It was founded in 1981 by Ravi Shankar. ... Art of
+                                Living offers several stress-elimination and self-development programs based on
+                                breathing techniques, meditation and yoga.
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                            <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+            <div id="health" class="line"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../hea.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                    Neuro-Linguistic Programming Training can transform your personal & professional life drastically in myriad ways. Through the initiative of the Indian Board of Hypnosis & Neuro-Linguistic Programming, we are arranging 6 Days NLP Practitioner Workshop for the citizens of Pune. HR managers, CEOs, BDOs, Marketing Heads, Trainers, Teachers, Parents all can participate & get benefited from this workshop, which enhances their performance to its peak. NLP doesn’t tell you ‘What to do?’(because almost everybody knows that), ‘How to do?’ & that is also with the help of tools & techniques. So join the journey & become the master of your fate!
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                                <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../download.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                The Art of Living Foundation is a volunteer-based, humanitarian and educational
+                                non-governmental organization (NGO). It was founded in 1981 by Ravi Shankar. ... Art of
+                                Living offers several stress-elimination and self-development programs based on
+                                breathing techniques, meditation and yoga.
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                                    <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+            <div id="society" class="line"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../soc.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                    The OR Society may endorse, sponsor or support conferences and events without being responsible for the organisation or running of these events
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                                        <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="cards col-12" style="width:800px">
+                        <div class="row">
+                            <div class="col-6" style="padding-top : 10px">
+                                <img src="../download.png" style="height : 160px">
+                            </div>
+                            <div class="col-4" style="padding-top : 10px">
+                                The Art of Living Foundation is a volunteer-based, humanitarian and educational
+                                non-governmental organization (NGO). It was founded in 1981 by Ravi Shankar. ... Art of
+                                Living offers several stress-elimination and self-development programs based on
+                                breathing techniques, meditation and yoga.
+                            </div>
+                        </div>
+                        <div class="col-8" style="text-align: right; padding-top : 10px;color:blue">
+                            Event Link
+                        </div>
+                        <div class="col-10" style="margin-top : 25px">
+                                <button id="logout" class="btn btn-success">JOIN</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- <div class="col-6">deqwf</div>
+                                            <div class="col-6">deqwf</div> -->
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
